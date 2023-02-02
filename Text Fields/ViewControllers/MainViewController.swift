@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,3 +21,10 @@ class MainViewController: UIViewController {
     }
 }
 
+extension MainViewController: LinkViewDelegate {
+    
+    func openSafariVC(safariVC: SFSafariViewController) {
+        
+        self.present(safariVC, animated: true, completion: nil)
+    }
+}

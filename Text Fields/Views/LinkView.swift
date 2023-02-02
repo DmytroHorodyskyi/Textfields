@@ -7,11 +7,15 @@
 import UIKit
 import SafariServices
 
+protocol LinkViewDelegate {
+    func openSafariVC(safariVC: SFSafariViewController)
+}
+
 @IBDesignable
 class LinkView: UIView, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var linkTextField: UITextField!
-    var mainViewController = MainViewController()
+    var delegate: MainViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,15 +58,7 @@ extension LinkView: UITextFieldDelegate {
         if string.count > 1 {
             if let url = URL(string: string) {
                 let vc = SFSafariViewController(url: url)
-                vc.delegate = self
-                
-                if var topController = UIApplication.shared.keyWindow?.rootViewController {
-                    while let presentedViewController = topController.presentedViewController {
-                        topController = presentedViewController
-                    }
-                    topController.present(vc, animated: true, completion: nil)
-                }
-                
+                delegate?.openSafariVC(safariVC: vc)
             }
             return true
         }
