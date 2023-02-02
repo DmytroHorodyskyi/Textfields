@@ -81,6 +81,9 @@
                             <constraint firstItem="5ir-uR-1jY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zcW-Rp-wxM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="linkView" destination="dHF-1d-Qj0" id="JDX-f0-KK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

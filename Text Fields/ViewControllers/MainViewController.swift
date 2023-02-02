@@ -10,8 +10,11 @@ import SafariServices
 
 class MainViewController: UIViewController, SFSafariViewControllerDelegate {
     
+    @IBOutlet weak var linkView: LinkView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        linkView.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
