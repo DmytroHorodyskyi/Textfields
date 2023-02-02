@@ -64,7 +64,8 @@ class InputLimitView: UIView {
             
         } else {
             countDownOfLimitTextField.textColor = UIColor.gray
-            inputLimitTextField.layer.borderColor = UIColor(red: 226, green: 226, blue: 226, alpha: 1).cgColor
+            inputLimitTextField.layer.borderColor = UIColor(white: 0, alpha: 0).cgColor
+            inputLimitTextField.borderStyle = .roundedRect
         }
     }
 }
