@@ -11,23 +11,17 @@ import UIKit
 class ValidationRulesView: UIView {
     
     private enum LabelState {
-        case confirmedLabel, unConfirmedLabel
+        case confirmedLabel
+        case unConfirmedLabel
     }
     
     @IBOutlet weak var validationRulesTextField: UITextField!
-    
     @IBOutlet weak var minLength8Label: UILabel!
-    
     @IBOutlet weak var min1DigitLabel: UILabel!
-    
     @IBOutlet weak var min1LowercaseLabel: UILabel!
-    
     @IBOutlet weak var min1CapitalLabel: UILabel!
-    
     @IBOutlet weak var passwordStrengthProgress: UIProgressView!
-    
-    
-    
+ 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -48,10 +42,12 @@ class ValidationRulesView: UIView {
     private func loadViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "ValidationRulesView", bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        
+        if let nibInstantiate = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            return nibInstantiate
+        }
+        return UIView()
     }
-    
-    
     
     private func setProgressView(progress: Float?, progressTintColor: UIColor?) {
         passwordStrengthProgress.progress = progress ?? 0
@@ -60,13 +56,11 @@ class ValidationRulesView: UIView {
     
     private func setLabel(_ label: UILabel, state: LabelState ) {
         switch state {
-            
         case .confirmedLabel:
             if let labelText = label.text {
                 label.text = "V" + labelText.dropFirst()
             }
             label.textColor = UIColor.green
-            
         case .unConfirmedLabel:
             if let labelText = label.text {
                 label.text = "-" + labelText.dropFirst()
@@ -128,6 +122,7 @@ class ValidationRulesView: UIView {
         }
     }
 }
+
 
 extension ValidationRulesView: UITextFieldDelegate {
     

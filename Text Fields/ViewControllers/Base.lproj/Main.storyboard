@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Text_Fields" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Text_Fields" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,24 +25,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvj-Se-h35" customClass="InputLimitView" customModule="Text_Fields" customModuleProvider="target">
                                 <rect key="frame" x="16" y="243.66666666666666" width="361" height="63.666666666666657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63.670000000000002" id="bbM-c0-DYj"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5L-yJ-Pdw" customClass="NoDigitsFieldView" customModule="Text_Fields" customModuleProvider="target">
                                 <rect key="frame" x="16" y="160" width="361" height="63.666666666666657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63.670000000000002" id="v7X-4e-O1j"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-gN-qv0" customClass="OnlyCharactersView" customModule="Text_Fields" customModuleProvider="target">
                                 <rect key="frame" x="16" y="327.33333333333331" width="361" height="63.666666666666686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63.670000000000002" id="HfN-qn-la6"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-1d-Qj0" customClass="LinkView" customModule="Text_Fields" customModuleProvider="target">
                                 <rect key="frame" x="16" y="411" width="361" height="63.666666666666686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63.670000000000002" id="2Eu-x7-fHL"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k46-ve-7m6" customClass="ValidationRulesView" customModule="Text_Fields" customModuleProvider="target">
-                                <rect key="frame" x="16" y="494.66666666666674" width="361" height="150"/>
+                                <rect key="frame" x="16" y="494.66666666666674" width="361" height="140"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="EgV-sd-x7U"/>
+                                    <constraint firstAttribute="height" priority="250" constant="140" id="b3N-J6-hmB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -50,7 +62,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nRS-gN-qv0" firstAttribute="top" secondItem="gvj-Se-h35" secondAttribute="bottom" constant="20" id="ACf-dN-zef"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k46-ve-7m6" secondAttribute="bottom" constant="10" id="F6d-kL-So7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k46-ve-7m6" secondAttribute="bottom" constant="10" id="Hs9-OE-Una"/>
                             <constraint firstItem="L5L-yJ-Pdw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Jpc-mx-AXM"/>
                             <constraint firstItem="dHF-1d-Qj0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KrE-Nh-lOC"/>
                             <constraint firstItem="k46-ve-7m6" firstAttribute="top" secondItem="dHF-1d-Qj0" secondAttribute="bottom" constant="20" id="Np2-BY-4Hg"/>

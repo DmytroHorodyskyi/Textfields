@@ -12,8 +12,6 @@ class OnlyCharactersView: UIView {
     
     @IBOutlet weak var onlyCharactersTextField: UITextField!
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -34,11 +32,12 @@ class OnlyCharactersView: UIView {
     private func loadViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "OnlyCharactersView", bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        
+        if let nibInstantiate = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            return nibInstantiate
+        }
+        return UIView()
     }
-    
-    
-    
     
     func permission(string: String) -> String {
         
@@ -47,28 +46,22 @@ class OnlyCharactersView: UIView {
         let mask = "wwwww-dddddd"
         
         for symbol in mask {
-            
             if changingString == "" {
                 break
             }
             
             let firstChar = changingString[changingString.startIndex]
-            
             if symbol == "w" && firstChar.isLetter {
                 result += String(firstChar)
                 changingString.removeFirst()
-                
             } else if symbol == "d" && firstChar.isNumber {
                 result += String(firstChar)
                 changingString.removeFirst()
-                
             } else if symbol == "-"{
                 result += String(symbol)
-                //changingString.removeFirst()
             } else {
                 changingString.removeFirst()
             }
-            
         }
         return result
     }
@@ -79,6 +72,7 @@ class OnlyCharactersView: UIView {
     }
     
 }
+
 
 extension OnlyCharactersView: UITextFieldDelegate {
     

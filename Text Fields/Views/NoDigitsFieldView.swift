@@ -12,10 +12,6 @@ class NoDigitsFieldView: UIView {
     
     @IBOutlet weak var noDigitsTextField: UITextField!
     
-    private let viewController = ViewController()
-    
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -36,17 +32,19 @@ class NoDigitsFieldView: UIView {
     private func loadViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "NoDigitsFieldView", bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        if let nibInstantiate = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            return nibInstantiate
+        }
+        return UIView()
     }
-    
-    
     
     @IBAction func noDigitsTextFieldAction(_ sender: UITextField) {
-        noDigitsTextField.text = noDigitsTextField.text!.components(separatedBy: CharacterSet.decimalDigits).joined()
+        if let text = noDigitsTextField.text {
+            noDigitsTextField.text = text.components(separatedBy: CharacterSet.decimalDigits).joined()
+        }
     }
-    
-    
 }
+
 
 extension NoDigitsFieldView: UITextFieldDelegate {
     

@@ -11,8 +11,7 @@ import SafariServices
 class LinkView: UIView, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var linkTextField: UITextField!
-    
-    
+    var mainViewController = MainViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,13 +33,14 @@ class LinkView: UIView, SFSafariViewControllerDelegate {
     private func loadViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "LinkView", bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        
+        if let nibInstantiate = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            return nibInstantiate
+        }
+        return UIView()
     }
-    
-    
-    
-    
 }
+
 
 extension LinkView: UITextFieldDelegate {
     
@@ -64,7 +64,9 @@ extension LinkView: UITextFieldDelegate {
                 }
                 
             }
+            return true
         }
         return true
     }
 }
+

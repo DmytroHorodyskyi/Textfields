@@ -11,10 +11,7 @@ import UIKit
 class InputLimitView: UIView {
     
     @IBOutlet weak var inputLimitTextField: UITextField!
-    
     @IBOutlet weak var countDownOfLimitTextField: UILabel!
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,15 +33,16 @@ class InputLimitView: UIView {
     private func loadViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "InputLimitView", bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        
+        if let nibInstantiate = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            return nibInstantiate
+        }
+        return UIView()
     }
-    
-    
-    
+        
     func setBlackColorFirstTenDigits() {
         let mainString: String = inputLimitTextField.text ?? ""
         let stringToColor = mainString.prefix(10)
-        
         let range = (mainString as NSString).range(of: String(stringToColor))
         let attributedString = NSMutableAttributedString(string:mainString)
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
@@ -52,16 +50,17 @@ class InputLimitView: UIView {
     }
     
     @IBAction func inputLimitTextFieldAction(_ sender: UITextField) {
-        
         setBlackColorFirstTenDigits()
         
-        countDownOfLimitTextField.text = String(10 - (inputLimitTextField.text?.count ?? 0))
-        if Int(countDownOfLimitTextField.text ?? "") ?? 0 < 0{
+        if let countOfChars = inputLimitTextField.text?.count {
+            countDownOfLimitTextField.text = String( 10 - countOfChars)
+        }
+        
+        if Int(countDownOfLimitTextField.text ?? "") ?? 0 < 0 {
             countDownOfLimitTextField.textColor = UIColor.red
             inputLimitTextField.layer.borderWidth = 1
             inputLimitTextField.layer.cornerRadius = 7
             inputLimitTextField.layer.borderColor = UIColor.red.cgColor
-            
         } else {
             countDownOfLimitTextField.textColor = UIColor.gray
             inputLimitTextField.layer.borderColor = UIColor(white: 0, alpha: 0).cgColor
@@ -69,6 +68,7 @@ class InputLimitView: UIView {
         }
     }
 }
+
 
 extension InputLimitView: UITextFieldDelegate {
     
