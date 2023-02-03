@@ -26,8 +26,8 @@ class MainViewController: UIViewController, SFSafariViewControllerDelegate {
 
 extension MainViewController: LinkViewDelegate {
     
-    func openSafariVC(safariVC: SFSafariViewController) {
-        
-        self.present(safariVC, animated: true, completion: nil)
+    func openSafariVC(with url: URL) {
+        let vc = SFSafariViewController(url: url)
+        self.present(vc, animated: true, completion: nil)
     }
 }

@@ -39,7 +39,7 @@ class InputLimitView: UIView {
         }
         return UIView()
     }
-        
+    
     func setBlackColorFirstTenDigits() {
         let mainString: String = inputLimitTextField.text ?? ""
         let stringToColor = mainString.prefix(10)
@@ -49,12 +49,9 @@ class InputLimitView: UIView {
         inputLimitTextField.attributedText = attributedString
     }
     
-    @IBAction func inputLimitTextFieldAction(_ sender: UITextField) {
-        setBlackColorFirstTenDigits()
-        
-        if let countOfChars = inputLimitTextField.text?.count {
-            countDownOfLimitTextField.text = String( 10 - countOfChars)
-        }
+    func changeInputLimitTFAppearance() {
+        guard let countOfChars = inputLimitTextField.text?.count else { return }
+        countDownOfLimitTextField.text = String( 10 - countOfChars)
         
         if Int(countDownOfLimitTextField.text ?? "") ?? 0 < 0 {
             countDownOfLimitTextField.textColor = UIColor.red
@@ -66,6 +63,12 @@ class InputLimitView: UIView {
             inputLimitTextField.layer.borderColor = UIColor(white: 0, alpha: 0).cgColor
             inputLimitTextField.borderStyle = .roundedRect
         }
+    }
+    
+    
+    @IBAction func inputLimitTextFieldAction(_ sender: UITextField) {
+        setBlackColorFirstTenDigits()
+        changeInputLimitTFAppearance()
     }
 }
 
