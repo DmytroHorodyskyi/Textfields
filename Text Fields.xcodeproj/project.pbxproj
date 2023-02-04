@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		740D0B26298959C400214E76 /* OnlyCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D0B25298959C400214E76 /* OnlyCharactersView.swift */; };
+		7417153B298D5B8300B3F261 /* TextFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */; };
 		747FD560298946E300BD8D12 /* OnlyCharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747FD55F298946E300BD8D12 /* OnlyCharactersView.xib */; };
 		747FD5642989486800BD8D12 /* LinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747FD5632989486800BD8D12 /* LinkView.xib */; };
 		747FD5662989487E00BD8D12 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FD5652989487E00BD8D12 /* LinkView.swift */; };
@@ -25,7 +26,6 @@
 		74AEE8FF2987CC1F00B97377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74AEE8FD2987CC1F00B97377 /* LaunchScreen.storyboard */; };
 		74AEE90A2987CC1F00B97377 /* Text_FieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE9092987CC1F00B97377 /* Text_FieldsTests.swift */; };
 		74AEE9142987CC1F00B97377 /* Text_FieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE9132987CC1F00B97377 /* Text_FieldsUITests.swift */; };
-		74AEE9162987CC1F00B97377 /* Text_FieldsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE9152987CC1F00B97377 /* Text_FieldsUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		740D0B25298959C400214E76 /* OnlyCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCharactersView.swift; sourceTree = "<group>"; };
+		7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfigurator.swift; sourceTree = "<group>"; };
 		747FD55F298946E300BD8D12 /* OnlyCharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlyCharactersView.xib; sourceTree = "<group>"; };
 		747FD5632989486800BD8D12 /* LinkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkView.xib; sourceTree = "<group>"; };
 		747FD5652989487E00BD8D12 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		74AEE9092987CC1F00B97377 /* Text_FieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_FieldsTests.swift; sourceTree = "<group>"; };
 		74AEE90F2987CC1F00B97377 /* Text FieldsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text FieldsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AEE9132987CC1F00B97377 /* Text_FieldsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_FieldsUITests.swift; sourceTree = "<group>"; };
-		74AEE9152987CC1F00B97377 /* Text_FieldsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_FieldsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +154,7 @@
 			children = (
 				74AEE8F22987CC1E00B97377 /* AppDelegate.swift */,
 				74AEE8F42987CC1E00B97377 /* SceneDelegate.swift */,
+				7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */,
 				748FE5F8298BB0DA00550D77 /* ViewControllers */,
 				748FE5FA298BBBD500550D77 /* Views */,
 				748FE5F7298BABFC00550D77 /* XIBs */,
@@ -176,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				74AEE9132987CC1F00B97377 /* Text_FieldsUITests.swift */,
-				74AEE9152987CC1F00B97377 /* Text_FieldsUITestsLaunchTests.swift */,
 			);
 			path = "Text FieldsUITests";
 			sourceTree = "<group>";
@@ -321,6 +321,7 @@
 				74AEE8F72987CC1E00B97377 /* MainViewController.swift in Sources */,
 				747FD57429894F1F00BD8D12 /* NoDigitsFieldView.swift in Sources */,
 				74AEE8F32987CC1E00B97377 /* AppDelegate.swift in Sources */,
+				7417153B298D5B8300B3F261 /* TextFieldConfigurator.swift in Sources */,
 				747FD56A2989496100BD8D12 /* ValidationRulesView.swift in Sources */,
 				747FD5662989487E00BD8D12 /* LinkView.swift in Sources */,
 				74AEE8F52987CC1E00B97377 /* SceneDelegate.swift in Sources */,
@@ -340,7 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74AEE9162987CC1F00B97377 /* Text_FieldsUITestsLaunchTests.swift in Sources */,
 				74AEE9142987CC1F00B97377 /* Text_FieldsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,6 +26,9 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70D-Wx-Y4N">
                     <rect key="frame" x="0.0" y="21" width="460" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ValidationRulesTextField">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="AF4-Ya-8bJ"/>
                     </constraints>

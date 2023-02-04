@@ -28,6 +28,7 @@
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sj9-6f-fee">
                     <rect key="frame" x="0.0" y="20" width="393" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <accessibility key="accessibilityConfiguration" identifier="InputLimitTextField"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -44,6 +45,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-Kd-HaF">
                     <rect key="frame" x="338" y="57" width="30" height="15"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <accessibility key="accessibilityConfiguration" identifier="InputLimitTextFieldCounter"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="8oy-4Z-kou"/>
                         <constraint firstAttribute="height" constant="15" id="nsv-UQ-fUm"/>
@@ -55,6 +57,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="f8P-vu-MIU"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="InputLimitTextField"/>
             <constraints>
                 <constraint firstItem="Sj9-6f-fee" firstAttribute="leading" secondItem="x8e-5s-tJE" secondAttribute="leading" id="39t-Q4-AWO"/>
                 <constraint firstItem="f8P-vu-MIU" firstAttribute="bottom" secondItem="Sj9-6f-fee" secondAttribute="bottom" constant="10" id="47B-SS-2MI"/>

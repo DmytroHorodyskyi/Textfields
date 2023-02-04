@@ -11,6 +11,7 @@ import UIKit
 class NoDigitsFieldView: UIView {
     
     @IBOutlet weak var noDigitsTextField: UITextField!
+    private let textFieldConfigurator = TextFieldConfigurator()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +41,7 @@ class NoDigitsFieldView: UIView {
     
     @IBAction func noDigitsTextFieldAction(_ sender: UITextField) {
         if let text = noDigitsTextField.text {
-            noDigitsTextField.text = text.components(separatedBy: CharacterSet.decimalDigits).joined()
+            noDigitsTextField.text = textFieldConfigurator.removeDigits(from: text)
         }
     }
 }

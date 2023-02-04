@@ -9,33 +9,45 @@ import XCTest
 
 final class Text_FieldsUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    let app = XCUIApplication()
+    
+    func testInputNoDigitsTextFieldSuccessfuly() {
+        
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.textFields["NoDigitsTextField"].tap()
+        app.textFields["NoDigitsTextField"].typeText("NoDigitsTextField is working")
+        app.buttons["Return"].tap()
+        
+        XCTAssertEqual(app.textFields["NoDigitsTextField"].value as! String, "NoDigitsTextField is working")
+    }
+    
+    func testInputInputLimitTextFieldSuccessfuly() {
+        
+        app.launch()
+        app.textFields["InputLimitTextField"].tap()
+        app.textFields["InputLimitTextField"].typeText("InputLimitTextField is working")
+        app.buttons["Return"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "InputLimitTextFieldCounter").label,
+                       "-20")
+    }
+    
+    func testInputOnlyCharactersTextFieldSuccessfuly() {
+        
+        app.launch()
+        app.textFields["OnlyCharactersTextField"].tap()
+        app.textFields["OnlyCharactersTextField"].typeText("chars-12345")
+        app.buttons["Return"].tap()
+        
+        XCTAssertEqual(app.textFields["OnlyCharactersTextField"].value as! String, "chars-12345")
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testInputValidationRulesTextFieldSuccessfuly() {
+
+        app.launch()
+        app.secureTextFields["ValidationRulesTextField"].tap()
+        app.secureTextFields["ValidationRulesTextField"].typeText("ValidationRulesTextField is working")
+
+        XCTAssertEqual(app.secureTextFields["ValidationRulesTextField"].value as! String, "•••••••••••••••••••••••••••••••••••")
     }
 }

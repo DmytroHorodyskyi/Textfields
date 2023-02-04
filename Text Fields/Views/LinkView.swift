@@ -56,12 +56,17 @@ extension LinkView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if string.count > 1 {
-            if let url = URL(string: string) {
-                delegate?.openSafariVC( with: url)
+            if string.hasPrefix("http") {
+                if let url = URL(string: string) {
+                    delegate?.openSafariVC( with: url)
+                }
+            } else {
+                if let url = URL(string: "http://" + string) {
+                    delegate?.openSafariVC( with: url)
+                }
             }
             return true
-        }
-        return true
+        } else { return false }
     }
 }
 

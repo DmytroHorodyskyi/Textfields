@@ -11,6 +11,7 @@ import UIKit
 class OnlyCharactersView: UIView {
     
     @IBOutlet weak var onlyCharactersTextField: UITextField!
+    private let textFieldConfigurator = TextFieldConfigurator()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,29 +42,7 @@ class OnlyCharactersView: UIView {
     
     func permission(string: String) -> String {
         
-        var changingString = string
-        var result = String("")
-        let mask = "wwwww-dddddd"
-        
-        for symbol in mask {
-            if changingString == "" {
-                break
-            }
-            
-            let firstChar = changingString[changingString.startIndex]
-            if symbol == "w" && firstChar.isLetter {
-                result += String(firstChar)
-                changingString.removeFirst()
-            } else if symbol == "d" && firstChar.isNumber {
-                result += String(firstChar)
-                changingString.removeFirst()
-            } else if symbol == "-"{
-                result += String(symbol)
-            } else {
-                changingString.removeFirst()
-            }
-        }
-        return result
+        textFieldConfigurator.transform(string, to: "wwwww-ddddd")
     }
     
     @IBAction func onlyCharactersTextFieldAction(_ sender: UITextField) {
