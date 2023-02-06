@@ -11,7 +11,7 @@ import UIKit
 class NoDigitsFieldView: UIView {
     
     @IBOutlet weak var noDigitsTextField: UITextField!
-    private let textFieldConfigurator = TextFieldConfigurator()
+    private let textFieldConfigurator = TextValidation()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

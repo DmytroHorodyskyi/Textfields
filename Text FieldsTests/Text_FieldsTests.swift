@@ -10,11 +10,11 @@ import XCTest
 
 final class Text_FieldsTests: XCTestCase {
 
-    var textFielConfigutator: TextFieldConfigurator!
+    var textFielConfigutator: TextValidation!
 
     override func setUp() {
         super.setUp()
-        textFielConfigutator = TextFieldConfigurator()
+        textFielConfigutator = TextValidation()
     }
 
     override func tearDown() {

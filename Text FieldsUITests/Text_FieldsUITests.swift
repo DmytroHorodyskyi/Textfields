@@ -15,7 +15,7 @@ final class Text_FieldsUITests: XCTestCase {
         
         app.launch()
         app.textFields["NoDigitsTextField"].tap()
-        app.textFields["NoDigitsTextField"].typeText("NoDigitsTextField is working")
+        app.textFields["NoDigitsTextField"].typeText("NoDigitsTextField123 is working")
         app.buttons["Return"].tap()
         
         XCTAssertEqual(app.textFields["NoDigitsTextField"].value as! String, "NoDigitsTextField is working")
@@ -32,14 +32,14 @@ final class Text_FieldsUITests: XCTestCase {
                        "-20")
     }
     
-    func testInputOnlyCharactersTextFieldSuccessfuly() {
+    func testInputMaskTextFieldSuccessfuly() {
         
         app.launch()
         app.textFields["OnlyCharactersTextField"].tap()
-        app.textFields["OnlyCharactersTextField"].typeText("chars-12345")
+        app.textFields["OnlyCharactersTextField"].typeText("characters-123456789")
         app.buttons["Return"].tap()
         
-        XCTAssertEqual(app.textFields["OnlyCharactersTextField"].value as! String, "chars-12345")
+        XCTAssertEqual(app.textFields["OnlyCharactersTextField"].value as! String, "chara-12345")
     }
     
     func testInputLinkTextFieldSuccessfuly() {

@@ -55,18 +55,8 @@ extension LinkView: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if string.count > 1 {
-            if string.hasPrefix("http") {
-                if let url = URL(string: string) {
-                    delegate?.openSafariVC( with: url)
-                }
-            } else {
-                if let url = URL(string: "http://" + string) {
-                    delegate?.openSafariVC( with: url)
-                }
-            }
-            return true
-        } else { return false }
+        guard !string.isEmpty, string.count > 1, string.hasPrefix("http://") || string.hasPrefix("https://"), let url = URL(string: string) else {return false}
+        delegate?.openSafariVC( with: url)
+        return true
     }
 }
-

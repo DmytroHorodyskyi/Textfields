@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		740D0B26298959C400214E76 /* OnlyCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740D0B25298959C400214E76 /* OnlyCharactersView.swift */; };
-		7417153B298D5B8300B3F261 /* TextFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */; };
+		7417153B298D5B8300B3F261 /* TextValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7417153A298D5B8300B3F261 /* TextValidation.swift */; };
 		747FD560298946E300BD8D12 /* OnlyCharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747FD55F298946E300BD8D12 /* OnlyCharactersView.xib */; };
 		747FD5642989486800BD8D12 /* LinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747FD5632989486800BD8D12 /* LinkView.xib */; };
 		747FD5662989487E00BD8D12 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FD5652989487E00BD8D12 /* LinkView.swift */; };
@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		740D0B25298959C400214E76 /* OnlyCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCharactersView.swift; sourceTree = "<group>"; };
-		7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfigurator.swift; sourceTree = "<group>"; };
+		7417153A298D5B8300B3F261 /* TextValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidation.swift; sourceTree = "<group>"; };
 		747FD55F298946E300BD8D12 /* OnlyCharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlyCharactersView.xib; sourceTree = "<group>"; };
 		747FD5632989486800BD8D12 /* LinkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkView.xib; sourceTree = "<group>"; };
 		747FD5652989487E00BD8D12 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			children = (
 				74AEE8F22987CC1E00B97377 /* AppDelegate.swift */,
 				74AEE8F42987CC1E00B97377 /* SceneDelegate.swift */,
-				7417153A298D5B8300B3F261 /* TextFieldConfigurator.swift */,
+				7417153A298D5B8300B3F261 /* TextValidation.swift */,
 				748FE5F8298BB0DA00550D77 /* ViewControllers */,
 				748FE5FA298BBBD500550D77 /* Views */,
 				748FE5F7298BABFC00550D77 /* XIBs */,
@@ -321,7 +321,7 @@
 				74AEE8F72987CC1E00B97377 /* MainViewController.swift in Sources */,
 				747FD57429894F1F00BD8D12 /* NoDigitsFieldView.swift in Sources */,
 				74AEE8F32987CC1E00B97377 /* AppDelegate.swift in Sources */,
-				7417153B298D5B8300B3F261 /* TextFieldConfigurator.swift in Sources */,
+				7417153B298D5B8300B3F261 /* TextValidation.swift in Sources */,
 				747FD56A2989496100BD8D12 /* ValidationRulesView.swift in Sources */,
 				747FD5662989487E00BD8D12 /* LinkView.swift in Sources */,
 				74AEE8F52987CC1E00B97377 /* SceneDelegate.swift in Sources */,

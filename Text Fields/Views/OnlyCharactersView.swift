@@ -11,7 +11,7 @@ import UIKit
 class OnlyCharactersView: UIView {
     
     @IBOutlet weak var onlyCharactersTextField: UITextField!
-    private let textFieldConfigurator = TextFieldConfigurator()
+    private let textFieldConfigurator = TextValidation()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

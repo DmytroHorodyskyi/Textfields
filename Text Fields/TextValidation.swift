@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TextFieldConfigurator {
+struct TextValidation {
     
     func removeDigits(from string: String) -> String{
         string.components(separatedBy: CharacterSet.decimalDigits).joined()
