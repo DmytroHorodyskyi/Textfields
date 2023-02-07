@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValidationRulesView" customModule="Text_Fields" customModuleProvider="target">
+            <connections>
+                <outlet property="min1CapitalLabel" destination="XM1-Xd-M8S" id="EnW-rO-PFi"/>
+                <outlet property="min1DigitLabel" destination="Xzj-Wo-G2n" id="vL1-Jd-oBN"/>
+                <outlet property="min1LowercaseLabel" destination="gfZ-fu-wUF" id="zSG-jN-7Nr"/>
+                <outlet property="minLength8Label" destination="tUr-Kb-cfa" id="eLN-2m-OgI"/>
+                <outlet property="passwordStrengthProgress" destination="OCu-bP-j1P" id="i9t-UW-V2i"/>
+                <outlet property="validationRulesTextField" destination="70D-Wx-Y4N" id="HZ0-nA-Q2y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="170"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70D-Wx-Y4N">
+                    <rect key="frame" x="0.0" y="21" width="460" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ValidationRulesTextField">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="AF4-Ya-8bJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="validationRulesTextFieldAction:" destination="-1" eventType="editingChanged" id="E2p-zf-4Hd"/>
+                        <outlet property="delegate" destination="-1" id="wtj-7S-IwU"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validation rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARZ-XR-Arc">
+                    <rect key="frame" x="0.0" y="1" width="460" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OCu-bP-j1P">
+                    <rect key="frame" x="7" y="61" width="446" height="4"/>
+                    <color key="progressTintColor" systemColor="systemYellowColor"/>
+                    <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min length 8 characters, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUr-Kb-cfa">
+                    <rect key="frame" x="7" y="74" width="160.66666666666666" height="15.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 digit, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzj-Wo-G2n">
+                    <rect key="frame" x="7" y="89.666666666666671" width="79" height="15.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 lowercase, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfZ-fu-wUF">
+                    <rect key="frame" x="7" y="105.33333333333333" width="113" height="15.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 capital required." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM1-Xd-M8S">
+                    <rect key="frame" x="7" y="121.00000000000001" width="143" height="15.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gfZ-fu-wUF" firstAttribute="top" secondItem="Xzj-Wo-G2n" secondAttribute="bottom" id="1Zm-9F-E0b"/>
+                <constraint firstItem="OCu-bP-j1P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="7" id="3w9-66-FvX"/>
+                <constraint firstItem="tUr-Kb-cfa" firstAttribute="top" secondItem="OCu-bP-j1P" secondAttribute="bottom" constant="9" id="B1F-NM-RTx"/>
+                <constraint firstItem="Xzj-Wo-G2n" firstAttribute="leading" secondItem="tUr-Kb-cfa" secondAttribute="leading" id="Edx-ki-ycM"/>
+                <constraint firstItem="ARZ-XR-Arc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Lbc-on-Zti"/>
+                <constraint firstItem="Xzj-Wo-G2n" firstAttribute="top" secondItem="tUr-Kb-cfa" secondAttribute="bottom" id="MFf-SA-Ofd"/>
+                <constraint firstItem="XM1-Xd-M8S" firstAttribute="top" secondItem="gfZ-fu-wUF" secondAttribute="bottom" id="Pax-js-mzd"/>
+                <constraint firstItem="ARZ-XR-Arc" firstAttribute="leading" secondItem="70D-Wx-Y4N" secondAttribute="leading" id="RFE-cR-DCk"/>
+                <constraint firstItem="OCu-bP-j1P" firstAttribute="top" secondItem="70D-Wx-Y4N" secondAttribute="bottom" id="UOa-k6-P6W"/>
+                <constraint firstItem="70D-Wx-Y4N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bTD-bp-Xf3"/>
+                <constraint firstItem="ARZ-XR-Arc" firstAttribute="trailing" secondItem="70D-Wx-Y4N" secondAttribute="trailing" id="kOL-s7-MvD"/>
+                <constraint firstItem="gfZ-fu-wUF" firstAttribute="leading" secondItem="Xzj-Wo-G2n" secondAttribute="leading" id="oYo-yG-bNK"/>
+                <constraint firstAttribute="trailing" secondItem="70D-Wx-Y4N" secondAttribute="trailing" id="vNP-q9-Mgd"/>
+                <constraint firstItem="tUr-Kb-cfa" firstAttribute="leading" secondItem="OCu-bP-j1P" secondAttribute="leading" id="x69-k0-X93"/>
+                <constraint firstItem="XM1-Xd-M8S" firstAttribute="leading" secondItem="gfZ-fu-wUF" secondAttribute="leading" id="xP0-XB-IGx"/>
+                <constraint firstItem="70D-Wx-Y4N" firstAttribute="top" secondItem="ARZ-XR-Arc" secondAttribute="bottom" constant="4" id="xWq-Ag-UaZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OCu-bP-j1P" secondAttribute="trailing" constant="7" id="yuE-cG-c0F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="184.73282442748092" y="-220.42253521126761"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

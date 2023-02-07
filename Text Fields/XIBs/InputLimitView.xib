@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputLimitView" customModule="Text_Fields" customModuleProvider="target">
+            <connections>
+                <outlet property="countDownOfLimitTextField" destination="yjv-Kd-HaF" id="xuE-Bd-mFF"/>
+                <outlet property="inputLimitTextField" destination="Sj9-6f-fee" id="Rgr-XL-3yp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="x8e-5s-tJE">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-Ci-zOk">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sj9-6f-fee">
+                    <rect key="frame" x="0.0" y="20" width="393" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <accessibility key="accessibilityConfiguration" identifier="InputLimitTextField"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="0.88444787260000002" green="0.8844479918" blue="0.8844479918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="inputLimitTextFieldAction:" destination="-1" eventType="editingChanged" id="6NV-aB-d0K"/>
+                        <outlet property="delegate" destination="-1" id="SNt-Jf-ghA"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-Kd-HaF">
+                    <rect key="frame" x="338" y="57" width="30" height="15"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <accessibility key="accessibilityConfiguration" identifier="InputLimitTextFieldCounter"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="8oy-4Z-kou"/>
+                        <constraint firstAttribute="height" constant="15" id="nsv-UQ-fUm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <color key="textColor" red="0.50441133979999997" green="0.50441139940000002" blue="0.50441139940000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="f8P-vu-MIU"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="InputLimitTextField"/>
+            <constraints>
+                <constraint firstItem="Sj9-6f-fee" firstAttribute="leading" secondItem="x8e-5s-tJE" secondAttribute="leading" id="39t-Q4-AWO"/>
+                <constraint firstItem="f8P-vu-MIU" firstAttribute="bottom" secondItem="Sj9-6f-fee" secondAttribute="bottom" constant="10" id="47B-SS-2MI"/>
+                <constraint firstItem="yjv-Kd-HaF" firstAttribute="top" secondItem="Sj9-6f-fee" secondAttribute="bottom" constant="-7" id="Eac-RK-e4I"/>
+                <constraint firstItem="yjv-Kd-HaF" firstAttribute="trailing" secondItem="Sj9-6f-fee" secondAttribute="trailing" constant="-25" id="OBg-rA-oTm"/>
+                <constraint firstAttribute="trailing" secondItem="Sj9-6f-fee" secondAttribute="trailing" id="TEx-ds-Q23"/>
+                <constraint firstItem="Sj9-6f-fee" firstAttribute="top" secondItem="eLd-Ci-zOk" secondAttribute="bottom" constant="4" id="ZI4-Sn-0p5"/>
+                <constraint firstItem="eLd-Ci-zOk" firstAttribute="leading" secondItem="Sj9-6f-fee" secondAttribute="leading" id="arj-z6-sCR"/>
+                <constraint firstItem="eLd-Ci-zOk" firstAttribute="top" secondItem="x8e-5s-tJE" secondAttribute="top" id="qag-ep-keC"/>
+                <constraint firstItem="eLd-Ci-zOk" firstAttribute="trailing" secondItem="Sj9-6f-fee" secondAttribute="trailing" id="wig-wC-39f"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="130.53435114503816" y="50.70422535211268"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
